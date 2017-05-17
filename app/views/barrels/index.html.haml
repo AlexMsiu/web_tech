@@ -1,0 +1,31 @@
+%h1 Listing barrels
+
+%table
+  %thead
+    %tr
+      %th Location
+      %th Manufacture date
+      %th Amount
+      %th Empty or not
+      %th Date of completion
+      %th Wine sort
+      %th
+      %th
+      %th
+
+  %tbody
+    - @barrels.each do |barrel|
+      %tr
+        %td= barrel.location
+        %td= barrel.manufacture_date
+        %td= barrel.amount
+        %td= barrel.empty_or_not
+        %td= barrel.date_of_completion
+        %td= barrel.wine_sort
+        %td= link_to 'Show', barrel
+        %td= link_to 'Edit', edit_barrel_path(barrel)
+        %td= link_to 'Destroy', barrel, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Barrel', new_barrel_path

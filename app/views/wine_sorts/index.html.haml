@@ -1,0 +1,27 @@
+%h1 Listing wine_sorts
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Wine
+      %th Time in the barrel
+      %th Time in the bottel
+      %th
+      %th
+      %th
+
+  %tbody
+    - @wine_sorts.each do |wine_sort|
+      %tr
+        %td= wine_sort.name
+        %td= wine_sort.wine
+        %td= wine_sort.time_in_the_barrel
+        %td= wine_sort.time_in_the_bottel
+        %td= link_to 'Show', wine_sort
+        %td= link_to 'Edit', edit_wine_sort_path(wine_sort)
+        %td= link_to 'Destroy', wine_sort, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Wine sort', new_wine_sort_path

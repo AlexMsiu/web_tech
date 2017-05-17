@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  wine: MyString
+  time_in_the_barrel: 1
+  time_in_the_bottel: 1
+
+two:
+  name: MyString
+  wine: MyString
+  time_in_the_barrel: 1
+  time_in_the_bottel: 1

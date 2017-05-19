@@ -1,0 +1,28 @@
+= form_for @barrel do |f|
+  - if @barrel.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@barrel.errors.count, "error")} prohibited this barrel from being saved:"
+      %ul
+        - @barrel.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :manufacture_date
+    = f.date_select :manufacture_date
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .field
+    = f.label :empty_or_not
+    = f.text_field :empty_or_not
+  .field
+    = f.label :date_of_completion
+    = f.date_select :date_of_completion
+  .field
+    = f.label :wine_sort_id
+    = f.select :wine_sort_id, options_for_select(WineSort.all.pluck(:name, :id), @barrel.wine_sort.id)
+  .actions
+    = f.submit 'Save'

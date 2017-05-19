@@ -1,0 +1,25 @@
+%h1 Listing ratio_of_varieties
+
+%table
+  %thead
+    %tr
+      %th Ratio
+      %th Grape sort
+      %th Wine sort
+      %th
+      %th
+      %th
+
+  %tbody
+    - @ratio_of_varieties.each do |ratio_of_variety|
+      %tr
+        %td= ratio_of_variety.ratio
+        %td= ratio_of_variety.grape_sort
+        %td= ratio_of_variety.wine_sort
+        %td= link_to 'Show', ratio_of_variety
+        %td= link_to 'Edit', edit_ratio_of_variety_path(ratio_of_variety)
+        %td= link_to 'Destroy', ratio_of_variety, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Ratio of variety', new_ratio_of_variety_path

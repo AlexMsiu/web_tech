@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Ratio:
+  = @ratio_of_variety.ratio
+%p
+  %b Grape sort:
+  = @ratio_of_variety.grape_sort
+%p
+  %b Wine sort:
+  = @ratio_of_variety.wine_sort
+
+= link_to 'Edit', edit_ratio_of_variety_path(@ratio_of_variety)
+\|
+= link_to 'Back', ratio_of_varieties_path

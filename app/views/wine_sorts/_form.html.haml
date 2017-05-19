@@ -1,0 +1,22 @@
+= form_for @wine_sort do |f|
+  - if @wine_sort.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wine_sort.errors.count, "error")} prohibited this wine_sort from being saved:"
+      %ul
+        - @wine_sort.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :wine
+    = f.text_field :wine
+  .field
+    = f.label :time_in_the_barrel
+    = f.number_field :time_in_the_barrel
+  .field
+    = f.label :time_in_the_bottel
+    = f.number_field :time_in_the_bottel
+  .actions
+    = f.submit 'Save'

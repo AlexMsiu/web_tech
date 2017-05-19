@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @wine_sort.name
+%p
+  %b Wine:
+  = @wine_sort.wine
+%p
+  %b Time in the barrel:
+  = @wine_sort.time_in_the_barrel
+%p
+  %b Time in the bottel:
+  = @wine_sort.time_in_the_bottel
+
+= link_to 'Edit', edit_wine_sort_path(@wine_sort)
+\|
+= link_to 'Back', wine_sorts_path

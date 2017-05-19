@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Location:
+  = @barrel.location
+%p
+  %b Manufacture date:
+  = @barrel.manufacture_date
+%p
+  %b Amount:
+  = @barrel.amount
+%p
+  %b Empty or not:
+  = @barrel.empty_or_not
+%p
+  %b Date of completion:
+  = @barrel.date_of_completion
+%p
+  %b Wine sort:
+  = @barrel.wine_sort
+
+= link_to 'Edit', edit_barrel_path(@barrel)
+\|
+= link_to 'Back', barrels_path
